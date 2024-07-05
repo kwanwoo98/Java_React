@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -31,4 +32,26 @@ function MainPage1(props){
     );
 }
 
+=======
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+    padding: 1em;
+    background: grey;
+`;
+
+const Title = styled.h1`
+    font-sizeL 1.5em;
+    color: white;
+    text-align: center;
+`;
+
+function MainPage1(props){
+    return(
+        <Wrapper>
+            <Title>메인페이지1</Title>
+        </Wrapper>
+    );
+}
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 export default MainPage1;

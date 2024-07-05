@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 import Card from "./Card";
 
 function ProfileCard(props) {

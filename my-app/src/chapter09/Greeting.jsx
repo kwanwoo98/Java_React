@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 function UserGreeting(props){
@@ -21,4 +22,26 @@ function Greeting(props){ // props를 전달 안하면 isLoggedIn 가 falsy이�
     // return <GuestGreeting />;
 }
 
+=======
+import React, { useState } from "react";
+
+function UserGreeting(props){
+    return <h1>다시 오셨군요!</h1>
+}
+
+function GuestGreeting(props){
+    return <h1>회원가입을 해주세요</h1>
+}
+
+function Greeting(props){
+    const isLoggedIn=props.isLoggedIn;
+
+    return isLoggedIn? <UserGreeting/>:<GuestGreeting/>
+
+    // if(isLoggedIn){
+    //     return <UserGreeting/>
+    // }
+    // return <GuestGreeting/>;
+}
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 export default Greeting;

@@ -1,13 +1,28 @@
+<<<<<<< HEAD
+=======
+import React from "react";
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 import styled from "styled-components";
 
 const Wrapper = styled.div`
     padding: 1rem;
     display: flex;
+<<<<<<< HEAD
     flex-direction: row;
+=======
+    flex-direction: column;
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
     align-items: flex-start;
     justify-content: flex-start;
     background-color: lightgrey;
 `;
+<<<<<<< HEAD
+=======
+// flex-direction: row;
+// align-items: flex-start;
+// align-items: baseline;
+// align-item : stretch;
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 
 const Block = styled.div`
     padding: ${(props) => props.padding};
@@ -18,6 +33,10 @@ const Block = styled.div`
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
+<<<<<<< HEAD
+=======
+    flex-duection : column;
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 `;
 
 const blockItems = [
@@ -44,9 +63,14 @@ function Blocks(props) {
             {blockItems.map((blockItem) => {
                 return (
                     <Block
+<<<<<<< HEAD
                         padding={blockItem.padding}
                         backgroundColor={blockItem.backgroundColor}
                     >
+=======
+                        padding={blockItem.padding} 
+                        backgroundColor={blockItem.backgroundColor}>
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
                         {blockItem.label}
                     </Block>
                 );

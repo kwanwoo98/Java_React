@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+<<<<<<< HEAD
 function Toggle2(props){
     const [isToggleOn, setIsToggleOn] = useState(true);
 
@@ -12,6 +13,18 @@ function Toggle2(props){
     // const handleClick = () => {
     //     setIsToggleOn((isToggleOn) => !isToggleOn);
     // }
+=======
+function Toggle2(props) {
+    const [isToggleOn, setIsToggleOn] = useState(true);
+
+    function handleClick() {
+        setIsToggleOn((isToggleOn) => !isToggleOn);
+    }
+
+    const handleClick = () => {
+        setIsToggleOn((isToggleOn)=>!isToggleOn);
+    }
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 
     return(
         <button onClick={handleClick}>

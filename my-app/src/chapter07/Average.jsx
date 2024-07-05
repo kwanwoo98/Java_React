@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useCallback, useMemo, useRef, useState } from "react";
 
 const getAverage= numbers => {
@@ -42,6 +43,39 @@ function Average(props){
             <button onClick={onInsert}>등록</button>
             <ul>
                 {list.map((value,index) => (
+=======
+import React, { useEffect, useMemo, useReducer, useState } from "react";
+
+const getAverage = numbers => {
+    console.log("평균값계산")
+    if (numbers.length === 0) return 0;
+    const sum = numbers.reduce((a, b) => a + b);
+    return sum / numbers.length;
+};
+
+function Average(props) {
+    const [list, setList] = useState([]);
+    const [number, setNumber] = useState('');
+
+    const onChange = e => {
+        setNumber(e.target.value);
+    };
+
+    const onInsert = e => {
+        const nextList = list.concat(parseInt(number));
+        setList(nextList);
+        setNumber('')
+    }
+
+    const avg = useMemo(() => getAverage(list), [list]);
+
+    return (
+        <div>
+            <input value={number} onChange={onChange} />
+            <button onClick={onInsert}>등록</button>
+            <ul>
+                {list.map((value, index) => (
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
                     <li key={index}>{value}</li>
                 ))}
             </ul>
@@ -49,5 +83,9 @@ function Average(props){
         </div>
     )
 }
+<<<<<<< HEAD
 
 export default Average;
+=======
+export default Average;
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4

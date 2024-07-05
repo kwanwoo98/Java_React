@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import React from "react";
 import "./TodoItem.css"
 
 const TodoItem=({ id, content, isDone, createdDate, onUpdate, onDelete })=>{
     console.log(`${id} TodoItem 업데이트`);
+=======
+import "./TodoItem.css"
+
+const TodoItem=({ id, content, isDone, createdDate, onUpdate, onDelete })=>{
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
     const onChangeCheckbox = () => { 
         onUpdate(id);
     };
@@ -26,4 +32,8 @@ const TodoItem=({ id, content, isDone, createdDate, onUpdate, onDelete })=>{
         </div>
     )
 }
+<<<<<<< HEAD
 export default React.memo(TodoItem);
+=======
+export default TodoItem;
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useReducer, useState } from "react";
 
 function reducer(state, action){
@@ -59,6 +60,29 @@ function NameForm(props){
             <button type="submit">제출하기</button>
         </form>
     );
+=======
+import React, { useState } from "react";
+
+function NameForm(props){
+    const [value, setValue]=useState('');
+    const handleChange=(event)=>{
+        setValue(event.target.value);
+    }
+    const handleSubmit= (event)=>{
+        alert(`입력한 이름: ${value}`);
+        event.preventDefault();
+    }
+
+    return(
+        <form onSubmit={handleSubmit}>
+            <lable>
+                이름
+                <input type="text" value={value} onChange={handleChange} />
+            </lable>
+            <button type="submit">제출</button>
+        </form>
+    )
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 }
 
 export default NameForm;

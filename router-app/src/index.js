@@ -5,10 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 
+<<<<<<< HEAD
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* 프로젝트에 라우터 적용하기 */}
+=======
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
     <BrowserRouter>
     <App />
     </BrowserRouter>

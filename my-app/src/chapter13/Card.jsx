@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React from "react";
 
 function Card(props) {
     const { title, backgroundColor, children } = props;
 
+=======
+function Card(props) {
+    const { title, backgroundColor, children } = props;
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
     return (
         <div
             style={{
@@ -18,5 +23,8 @@ function Card(props) {
         </div>
     );
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 export default Card;

@@ -3,7 +3,10 @@ import ThemeContext from "./ThemeContext";
 
 function MainContent(props) {
     const { theme, toggleTheme } = useContext(ThemeContext);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
     return (
         <div
             style={{
@@ -19,5 +22,8 @@ function MainContent(props) {
         </div>
     );
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6628a8a4fc4f49e495e27f9e1eb29df574b210a4
 export default MainContent;
