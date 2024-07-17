@@ -22,16 +22,14 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
-public class JwtProviderImpl implements JwtProvider {
-
+public class JwtProviderImpl implements  JwtProvider {
     @Value("${app.jwt.secret}")
     private String JWT_SECRET;
 
     @Value("${app.jwt.expiration-in-ms}")
     private Long JWT_EXPIRATION_IN_MS;
-
     @Override
-    public String generateToken(UserPrinciple auth){
+    public String generateToken(UserPrinciple auth) {
         String authorites = auth.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
@@ -48,13 +46,13 @@ public class JwtProviderImpl implements JwtProvider {
     }
 
     @Override
-    public Authentication getAuthentication(HttpServletRequest request){
-
+    public Authentication getAuthentication(HttpServletRequest request) {
         Claims claims = extractClaims(request);
 
         if(claims == null) return null;
 
         String username = claims.getSubject();
+//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!"+username);
         Long userId = claims.get("userId", Long.class);
 
         Set<GrantedAuthority> authorities = Arrays.stream(claims.get("roles").toString().split(","))
@@ -66,18 +64,18 @@ public class JwtProviderImpl implements JwtProvider {
                 .authorities(authorities)
                 .id(userId)
                 .build();
-
         if(username == null) {
             System.out.println("username null error");
             return null;
         }
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!"+userDetails.getUsername());
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!"+userDetails.getAuthorities());
 
         return new UsernamePasswordAuthenticationToken(userDetails, null, authorities);
     }
 
     @Override
-    public boolean isTokenValid(HttpServletRequest request){
-
+    public boolean isTokenValid(HttpServletRequest request) {
         Claims claims = extractClaims(request);
 
         if(claims == null) {
@@ -89,6 +87,7 @@ public class JwtProviderImpl implements JwtProvider {
 
         return true;
     }
+
 
     private Claims extractClaims(HttpServletRequest request){
         String token = SecurityUtils.extractAuthTokenFromRequest(request);

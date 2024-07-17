@@ -20,7 +20,7 @@ public class PurchaseController {
         return new ResponseEntity<>(purchaseService.savePurchase(purchase), HttpStatus.CREATED);
     }
 
-    @GetMapping
+    @GetMapping("/getList")
     public ResponseEntity<Object> getAllPurchasesOfUser(@AuthenticationPrincipal UserPrinciple userPrinciple){
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+userPrinciple.getUser());
         return ResponseEntity.ok(purchaseService.findPurchaseItemsOfUser(userPrinciple.getUsername()));

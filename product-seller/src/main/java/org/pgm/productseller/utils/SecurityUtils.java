@@ -18,7 +18,6 @@ public class SecurityUtils {
         String bearerToken = request.getHeader(AUTH_HEADER);
 
         if(StringUtils.hasLength(bearerToken) && bearerToken.startsWith(AUTH_TOKEN_PREFIX)){
-            //System.out.println(bearerToken.substring(7));
             return bearerToken.substring(7); //토큰 부분만 잘라서 리턴
         }
         return null; //없을경우

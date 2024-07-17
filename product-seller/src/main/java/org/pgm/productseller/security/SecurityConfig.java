@@ -40,7 +40,7 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((authz)-> authz
                         .requestMatchers("/api/authentication/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/product/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/product").permitAll()
                         .requestMatchers("/api/product/**").hasRole(Role.ADMIN.name())
                         .anyRequest().authenticated()
                 )
@@ -53,6 +53,7 @@ public class SecurityConfig {
             throws Exception{
         return authenticationConfiguration.getAuthenticationManager();
     }
+
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
